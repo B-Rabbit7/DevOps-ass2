@@ -11,7 +11,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 // Define the directory where your static files (including index.html) are located
-const staticDir = path.join(__dirname, 'DevOps-ass2'); // Change 'public' to your actual directory name
+const staticDir = path.join(__dirname); // Change 'public' to your actual directory name
 
 // Serve static files from the specified directory
 app.use(express.static(staticDir));
