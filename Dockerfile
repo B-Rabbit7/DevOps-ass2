@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 RUN apt-get update && apt-get install -y git
 
 # Clone your GitHub repository
-RUN git clone https://github.com/B-Rabbit7/DevOps-ass2.git /usr/src/app
+RUN git clone https://github.com/B-Rabbit7/DevOps-ass2.git .
 WORKDIR /usr/src/app/DevOps-ass2
 COPY package*.json ./
 RUN npm install
