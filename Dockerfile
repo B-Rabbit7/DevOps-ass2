@@ -14,4 +14,4 @@ COPY package*.json ./
 RUN npm install
 # Expose the port your app will run on (adjust this if needed)
 EXPOSE 80
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]
