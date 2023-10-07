@@ -1,19 +1,14 @@
 FROM node:14
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+RUN apt-get update && apt-get install -y git
 
-# Install dependencies
-RUN npm install
+RUN git clone https://github.com/B-Rabbit7/DevOps-ass2.git /app
 
-# Copy the content of the local directory to the working directory
-COPY . .
-
-# Expose the port your app will run on
 EXPOSE 80
 
-# Define the command to run your application
-CMD [ "node", "app.js" ]
+RUN npm install -g http-server
+
+CMD [ "http-server", "/app", "-p", "80" ]
+
