@@ -1,7 +1,6 @@
-# Use an official Node.js runtime as a parent image
 FROM node:18
 
-# Set the working directory in the container
+# Create app directory
 WORKDIR /usr/src/app
 
 # Install Git
@@ -9,9 +8,16 @@ RUN apt-get update && apt-get install -y git
 
 # Clone your GitHub repository
 RUN git clone https://github.com/B-Rabbit7/DevOps-ass2.git .
-WORKDIR /usr/src/app/DevOps-ass2
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
 COPY package*.json ./
 RUN npm install
+
 # Expose the port your app will run on (adjust this if needed)
-EXPOSE 80
+EXPOSE 8080
+
+# Specify the command to start your Node.js application
 CMD [ "node", "index.js" ]
+

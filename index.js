@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path'); // Import the 'path' module
 
 // Constants
-const PORT = 80;  // Change to 80 to match the exposed port
+const PORT = 8080;  // Change to 8080 to match the exposed port
 const HOST = '0.0.0.0';
 
 // App
